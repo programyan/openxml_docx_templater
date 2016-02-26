@@ -13,13 +13,13 @@ module OpenxmlDocxTemplater
     def process context
       tmpfiles = []
       Zip::File.open(@template) do |zipfile|
-        %w(word/document.xml).each do |xml_file|
-          content = zipfile.read(xml_file).gsub(/{(.*?)%(.+?)%(.*?)}/) { |s| s.gsub(/<(.+?)>[\n]?/m, "") }
+        %w(word/document.xml word/styles.xml).each do |xml_file|
+          content = zipfile.read(xml_file).refact
 
           docxeruby = DocxEruby.new(XmlReader.new(content))
           out = docxeruby.evaluate(context)
 
-          tmpfiles << (file = Tempfile.new("serenity"))
+          tmpfiles << (file = Tempfile.new("openxml_template"))
           file << out
           file.close
 

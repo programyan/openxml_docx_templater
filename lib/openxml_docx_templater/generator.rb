@@ -1,6 +1,6 @@
 module OpenxmlDocxTemplater
   module Generator
-    def render template_path, output_path = output_name(template_path)
+    def render_msword template_path, output_path = output_name(template_path)
       template = Template.new template_path, output_path
       template.process binding
     end
@@ -11,7 +11,7 @@ module OpenxmlDocxTemplater
       if input =~ /(.+)\.docx\Z/
         "#{$1}_output.docx"
       else
-        "#{input}_output.docxs"
+        "#{input}_output.docx"
       end
     end
   end
