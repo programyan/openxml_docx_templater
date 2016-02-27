@@ -54,7 +54,7 @@ module OpenxmlDocxTemplater
     end
 
     def convert_newlines text
-      text.gsub("First line", '<text:line-break>')
+      text.gsub("First line", '<w:br/>')
     end
   end
 
