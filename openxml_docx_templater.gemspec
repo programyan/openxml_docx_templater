@@ -9,18 +9,10 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Andrew Ageev"]
   spec.email         = ["ageev86@gmail.com"]
 
-  spec.summary       = %q{This gem was released to lazy create docx template}
-  spec.description   = %q{This gem was released to lazy create docx template}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Simple creation .docx files by templates}
+  spec.description   = %q{Simple creation .docx files by templates}
+  spec.homepage      = "https://github.com/AgeevAndrew/openxml_docx_templater"
   spec.license       = "MIT"
-
-  # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
-  # delete this section to allow pushing this gem to any host.
-  if spec.respond_to?(:metadata)
-    spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com'"
-  else
-    raise "RubyGems 2.0 or newer is required to protect against public gem pushes."
-  end
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
