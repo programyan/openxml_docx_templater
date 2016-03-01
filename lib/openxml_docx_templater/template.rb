@@ -14,7 +14,7 @@ module OpenxmlDocxTemplater
       tmpfiles = []
       Zip::File.open(@template) do |zipfile|
         %w(word/document.xml word/styles.xml).each do |xml_file|
-          content = zipfile.read(xml_file).refact
+          content = zipfile.read(xml_file).refact.force_encoding("utf-8")
 
           docxeruby = DocxEruby.new(XmlReader.new(content))
           out = docxeruby.evaluate(context)
