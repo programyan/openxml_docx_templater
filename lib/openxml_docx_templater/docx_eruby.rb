@@ -22,28 +22,10 @@ module OpenxmlDocxTemplater
     def convert template
       src = "_buf = '';"
       buffer = []
-      buffer_next = []
 
       template.each_node do |node, type|
-        if !buffer_next.empty?
-          if is_matching_pair?(buffer.last, node)
-            buffer.pop
-            next
-          elsif is_nonpair_tag? node
-            next
-          else
-            buffer << buffer_next
-            buffer.flatten!
-            buffer_next = []
-          end
-        end
-
-        if type == NodeType::CONTROL
-          buffer_next = process_instruction(node)
-        else
-          buffer << process_instruction(node)
-          buffer.flatten!
-        end
+        buffer << process_instruction(node)
+        buffer.flatten!
       end
 
       buffer.each { |line| src << line.to_buf }
@@ -51,7 +33,6 @@ module OpenxmlDocxTemplater
     end
 
     def process_instruction text
-      #text = text.strip
       pos = 0
       src = []
 
@@ -74,17 +55,6 @@ module OpenxmlDocxTemplater
 
       src << Line.text(rest) unless rest.nil? or rest.empty?
       src
-    end
-
-    def is_nonpair_tag? tag
-      tag =~ /<.+?\/>/
-    end
-
-    def is_matching_pair? open, close
-      open = open.to_s.strip
-      close = close.to_s.strip
-
-      close == "</#{open[1, close.length - 3]}>"
     end
   end
 end
