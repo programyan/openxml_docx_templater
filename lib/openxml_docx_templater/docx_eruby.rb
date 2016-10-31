@@ -84,7 +84,7 @@ module OpenxmlDocxTemplater
       open = open.to_s.strip
       close = close.to_s.strip
 
-      close == "</#{open[1, close.length - 3]}>"
+      close == "</#{open[1, close.length - 1]}>"
     end
   end
 end
