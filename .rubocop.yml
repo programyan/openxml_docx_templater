@@ -38,14 +38,3 @@ LineLength:
 Lint/UnifiedInteger:
   Description: 'Use Integer instead of Fixnum or Bignum'
   Enabled: false
-
-Metrics/BlockLength:
-  Description: 'Avoid long blocks with many lines.'
-  Exclude:
-    - "spec/**/*.rb"
-    - "**/*.rake"
-    - "db/migrate/*.rb"
-
-Rails/HttpPositionalArguments:
-  Exclude:
-    - spec/acceptance/**/*_spec.rb
