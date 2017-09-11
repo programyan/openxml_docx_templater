@@ -1,0 +1,67 @@
+AllCops:
+  TargetRubyVersion: 2.4
+
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+
+
+Rails:
+  Enabled: true
+
+Rails/DynamicFindBy:
+  Enabled: false
+
+Rails/TimeZone:
+  Enabled: false
+
+Rails/EnumUniqueness:
+  Enabled: false
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+AsciiComments:
+  Enabled: false
+
+ClassLength:
+  Enabled: false
+
+MethodLength:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/PredicateName:
+  NameWhitelist:
+    - is_a?
+
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+Layout/AlignParameters:
+  Enabled: false
+
+LineLength:
+  Max: 100
+
+Lint/UnifiedInteger:
+  Description: 'Use Integer instead of Fixnum or Bignum'
+  Enabled: false
+
+Metrics/BlockLength:
+  Description: 'Avoid long blocks with many lines.'
+  Exclude:
+    - "spec/**/*.rb"
+    - "**/*.rake"
+    - "db/migrate/*.rb"
+
+Rails/HttpPositionalArguments:
+  Exclude:
+    - spec/acceptance/**/*_spec.rb
