@@ -1,7 +1,8 @@
+# frozen_string_literal: true
+
 module OpenxmlDocxTemplater
   class XmlReader
-
-    def initialize src
+    def initialize(src)
       @src = src
     end
 
@@ -20,12 +21,9 @@ module OpenxmlDocxTemplater
       end
     end
 
-    def node_type text
-      if text =~ /\s*\{%[^=#].+?%\}\s*/
-        NodeType::CONTROL
-      else
-        NodeType::TEMPLATE
-      end
+    def node_type(text)
+      return NodeType::CONTROL if text.match?(/\s*\{%[^=#].+?%\}\s*/)
+      NodeType::TEMPLATE
     end
   end
 end
