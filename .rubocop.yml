@@ -4,22 +4,6 @@ AllCops:
   DisplayCopNames: true
   DisplayStyleGuide: true
 
-
-Rails:
-  Enabled: true
-
-Rails/DynamicFindBy:
-  Enabled: false
-
-Rails/TimeZone:
-  Enabled: false
-
-Rails/EnumUniqueness:
-  Enabled: false
-
-Rails/SkipsModelValidations:
-  Enabled: false
-
 AsciiComments:
   Enabled: false
 
@@ -49,7 +33,7 @@ Layout/AlignParameters:
   Enabled: false
 
 LineLength:
-  Max: 100
+  Max: 120
 
 Lint/UnifiedInteger:
   Description: 'Use Integer instead of Fixnum or Bignum'

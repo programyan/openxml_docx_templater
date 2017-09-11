@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module OpenxmlDocxTemplater
   class NodeType
     TAG = 1

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "openxml_docx_templater/version"
 require "openxml_docx_templater/debug"
 require "openxml_docx_templater/node_type"
