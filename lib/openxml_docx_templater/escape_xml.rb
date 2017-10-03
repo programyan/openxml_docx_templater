@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class String
-  CODE_LINE_PATTERN = /{(.*?)%(.+?)%(.*?)}/
+  CODE_LINE_PATTERN = /{([^{]*?)%(.+?)%(.*?)}/
   TAG_PATTERN = /<(.+?)>[\n]?/m
 
   def escape_xml
